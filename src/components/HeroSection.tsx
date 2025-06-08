@@ -10,7 +10,7 @@ const HeroSection: React.FC = () => {
         Connectez les passionnés d'art avec les artistes qui façonnent notre monde !
       </p>
       <button className="bg-transparent border-2 border-bleu-neon text-bleu-neon px-6 py-2 rounded hover:bg-rose-neon hover:border-rose-neon hover:text-blanc-casse transition duration-300 animate__animated animate__fadeIn animate__delay-2s">
-        Découvrir les artistes
+        Découvrir nos artistes
       </button>
     </section>
   );
