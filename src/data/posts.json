@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Nouveau clip de MARINA",
+    "content": "Regardez 'I ❤'",
+    "link": "https://m.youtube.com/watch?v=cmFEMLWs-tI",
+    "type": "youtube"
+  },
+  {
+    "id": 2,
+    "title": "Mariah Carey est de retour",
+    "content": "Écoutez 'Type Dangerous'",
+    "link": "https://open.spotify.com/album/5zqPvn0AajYX7omxHLRmpJ",
+    "type": "spotify"
+  },
+  {
+    "id": 3,
+    "title": "Addison Rae - Album 'Addison'",
+    "content": "Un mélange hypnotique de Trip Hop et Pop",
+    "link": "https://open.spotify.com/album/2ffVa2UhHUDwMHnr685zJ4",
+    "type": "spotify"
+  }
+]

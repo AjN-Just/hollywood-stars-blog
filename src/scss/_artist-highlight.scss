@@ -1,0 +1,70 @@
+.artist-highlight {
+  background: $gris-fonce;
+  padding: $spacing-unit;
+  margin-top: $spacing-unit;
+  position: relative;
+
+  h2 {
+    font-family: $font-montserrat;
+    font-size: 1.5rem;
+    color: $rose-neon;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .artist-content {
+    display: flex;
+    align-items: center;
+    gap: $spacing-unit;
+    transition: all $transition-speed ease;
+
+    .avatar {
+      width: 8rem;
+      height: 8rem;
+      background: linear-gradient(135deg, $bleu-nuit 0%, $bleu-nuit-fonce 100%);
+      border-radius: 50%;
+      border: 2px solid $bleu-neon;
+      transition: all $transition-speed ease;
+
+      &:hover {
+        border-color: $dore;
+        transform: rotate(5deg);
+      }
+    }
+
+    h3 {
+      font-family: $font-montserrat;
+      font-size: 1.2rem;
+      color: $blanc-casse;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: $blanc-casse;
+
+      a {
+        color: $bleu-neon;
+        transition: all $transition-speed ease;
+
+        &:hover {
+          color: $dore;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    // Responsive
+    @include responsive(md) {
+      gap: $spacing-unit * 2;
+
+      .avatar {
+        width: 10rem;
+        height: 10rem;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+.hero-section {
+  background: linear-gradient(135deg, $gris-fonce 0%, $gris-fonce-fonce 100%);
+  padding: $spacing-unit * 2;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba($bleu-neon, 0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+    z-index: 0;
+  }
+
+  h2 {
+    font-family: $font-montserrat;
+    font-size: 2.5rem;
+    color: $rose-neon;
+    margin-bottom: $spacing-unit;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 0 10px rgba($rose-neon, 0.5);
+
+    @include responsive(md) {
+      font-size: 3.5rem;
+    }
+
+    @include responsive(lg) {
+      font-size: 4rem;
+    }
+  }
+
+  p {
+    font-size: 1rem;
+    color: $blanc-casse;
+    max-width: 40rem;
+    margin: 0 auto $spacing-unit auto;
+    position: relative;
+    z-index: 1;
+
+    @include responsive(md) {
+      font-size: 1.2rem;
+    }
+  }
+
+  .button {
+    @include neon-border($bleu-neon);
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    transition: all $transition-speed ease;
+
+    &:hover {
+      background-color: $rose-neon;
+      color: $blanc-casse;
+      @include neon-border($rose-neon);
+      transform: translateY(-2px);
+    }
+  }
+
+  // Animation de fond
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  // Responsive
+  @include responsive(md) {
+    padding: $spacing-unit * 3;
+
+    &:before {
+      top: -30%;
+      left: -30%;
+    }
+  }
+
+  @include responsive(lg) {
+    padding: $spacing-unit * 4;
+  }
+}
