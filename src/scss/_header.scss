@@ -1,0 +1,110 @@
+// Variables spécifiques au header
+$header-height: 4rem;
+$nav-link-color: $bleu-neon;
+$nav-hover-color: $rose-neon;
+
+// Mixin pour le header
+@mixin header-bg {
+  background: linear-gradient(135deg, $bleu-nuit 0%, $bleu-nuit-fonce 100%);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.header {
+  height: $header-height;
+  @include header-bg;
+  padding: 0 $spacing-unit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all $transition-speed ease;
+
+  &.scrolled {
+    height: 3.5rem;
+    @include header-bg;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .logo {
+    font-family: $font-montserrat;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $blanc-casse;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    .star {
+      margin-left: 0.5rem;
+      color: $dore;
+      font-size: 1.5rem;
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
+  }
+
+  .nav {
+    ul {
+      display: flex;
+      list-style: none;
+      gap: $spacing-unit;
+
+      li {
+        a {
+          font-family: $font-montserrat;
+          font-size: 1rem;
+          color: $nav-link-color;
+          text-decoration: none;
+          padding: 0.5rem 1rem;
+          transition: all $transition-speed ease;
+          position: relative;
+
+          &:hover {
+            color: $nav-hover-color;
+            &:after {
+              width: 100%;
+            }
+          }
+
+          &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: $nav-hover-color;
+            transition: width $transition-speed ease;
+          }
+        }
+      }
+    }
+  }
+
+  // Animations
+  @keyframes glow {
+    from { text-shadow: 0 0 5px $dore, 0 0 10px $dore; }
+    to { text-shadow: 0 0 10px $dore, 0 0 20px $dore; }
+  }
+
+  // Responsive
+  @include responsive(md) {
+    padding: 0 $spacing-unit * 2;
+
+    .logo {
+      font-size: 2.5rem;
+    }
+
+    .nav ul {
+      gap: $spacing-unit * 2;
+    }
+  }
+
+  @include responsive(lg) {
+    .nav ul li a {
+      font-size: 1.2rem;
+    }
+  }
+}

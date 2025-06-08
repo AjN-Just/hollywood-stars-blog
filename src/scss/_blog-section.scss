@@ -1,0 +1,88 @@
+.blog-section {
+  padding: $spacing-unit;
+  position: relative;
+  z-index: 1;
+
+  h2 {
+    font-family: $font-montserrat;
+    font-size: 1.5rem;
+    color: $rose-neon;
+    margin-bottom: $spacing-unit;
+    text-align: center;
+    text-shadow: 0 0 5px rgba($rose-neon, 0.3);
+  }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-unit;
+    transition: all $transition-speed ease;
+
+    .post-card {
+      background: linear-gradient(135deg, $gris-fonce 0%, $gris-fonce-fonce 100%);
+      padding: $spacing-unit;
+      border-radius: $border-radius;
+      overflow: hidden;
+      transition: transform $transition-speed ease;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba($bleu-neon, 0.5);
+      }
+
+      h3 {
+        font-family: $font-montserrat;
+        font-size: 1.2rem;
+        color: $rose-neon;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+        color: $blanc-casse;
+        margin-bottom: 0.5rem;
+      }
+
+      iframe {
+        width: 100%;
+        height: 12rem;
+        border: none;
+        border-radius: $border-radius;
+        transition: all $transition-speed ease;
+
+        &:hover {
+          transform: scale(1.02);
+        }
+      }
+
+      a {
+        display: inline-block;
+        color: $bleu-neon;
+        margin-top: 0.5rem;
+        transition: all $transition-speed ease;
+
+        &:hover {
+          color: $dore;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    // Responsive
+    @include responsive(md) {
+      grid-template-columns: repeat(2, 1fr);
+
+      .post-card {
+        padding: $spacing-unit * 1.5;
+      }
+    }
+
+    @include responsive(lg) {
+      grid-template-columns: repeat(3, 1fr);
+
+      .post-card {
+        padding: $spacing-unit * 2;
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.footer {
+  background: $bleu-nuit;
+  padding: $spacing-unit;
+  text-align: center;
+  border-top: 1px solid rgba($blanc-casse, 0.1);
+
+  p {
+    font-size: 0.9rem;
+    color: $blanc-casse;
+    transition: all $transition-speed ease;
+
+    a {
+      color: $bleu-neon;
+      text-decoration: none;
+
+      &:hover {
+        color: $dore;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // Responsive
+  @include responsive(md) {
+    padding: $spacing-unit * 1.5;
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+// Import des variables et mixins
+@import 'variables';
+@import 'mixins';
+
+// Réinitialisation CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Styles globaux
+body {
+  background-color: $bleu-nuit;
+  color: $blanc-casse;
+  font-family: $font-roboto, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: $bleu-neon;
+  text-decoration: none;
+  transition: color $transition-speed ease;
+
+  &:hover {
+    color: $dore;
+  }
+}
+
+h1, h2, h3 {
+  font-family: $font-montserrat;
+}
+
+h2 {
+  color: $rose-neon;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-unit;
+}
+
+// Animations globales (via Animate.css)
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+// Styles additionnels (optionnel)
+button {
+  cursor: pointer;
+  outline: none;
+}

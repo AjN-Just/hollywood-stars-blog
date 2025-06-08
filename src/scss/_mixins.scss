@@ -1,0 +1,10 @@
+@mixin neon-border($color) {
+  border: 2px solid $color;
+  box-shadow: 0 0 10px $color, 0 0 20px $color;
+  transition: all $transition-speed ease;
+}
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == "md" { @media (min-width: 768px) { @content; } }
+  @else if $breakpoint == "lg" { @media (min-width: 1024px) { @content; } }
+}
